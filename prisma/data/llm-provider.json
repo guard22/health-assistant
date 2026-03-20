@@ -1,0 +1,37 @@
+[
+  {
+    "providerId": "groq",
+    "name": "Groq",
+    "apiKey": "",
+    "apiURL": "https://api.groq.com/openai/v1",
+    "order": 0
+  },
+  {
+    "providerId": "openai",
+    "name": "OpenAI",
+    "apiKey": "",
+    "apiURL": "https://api.openai.com/v1",
+    "order": 1
+  },
+  {
+    "providerId": "anthropic",
+    "name": "Anthropic",
+    "apiKey": "",
+    "apiURL": "https://api.anthropic.com/",
+    "order": 2
+  },
+  {
+    "providerId": "google",
+    "name": "Google",
+    "apiKey": "",
+    "apiURL": "https://generativelanguage.googleapis.com/v1beta",
+    "order": 3
+  },
+  {
+    "providerId": "ollama",
+    "name": "Ollama",
+    "apiKey": "",
+    "apiURL": "http://localhost:11434",
+    "order": 4
+  }
+]
