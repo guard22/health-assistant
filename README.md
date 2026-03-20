@@ -1,181 +1,248 @@
-# 🚀 **OpenHealth**
+# Health Assistant
 
 <div align="center">
 
-**AI Health Assistant | Powered by Your Data**
+**Цифровой пульт управления здоровьем | Команда Tehniki**
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-Web-blue?style=for-the-badge" alt="Platform">
-  <img src="https://img.shields.io/badge/Language-TypeScript-blue?style=for-the-badge" alt="Language">
-  <img src="https://img.shields.io/badge/Framework-Next.js-black?style=for-the-badge" alt="Framework">
+  <img src="https://img.shields.io/badge/Платформа-Web-blue?style=for-the-badge" alt="Platform">
+  <img src="https://img.shields.io/badge/Язык-TypeScript-blue?style=for-the-badge" alt="Language">
+  <img src="https://img.shields.io/badge/Фреймворк-Next.js_15-black?style=for-the-badge" alt="Framework">
+  <img src="https://img.shields.io/badge/БД-PostgreSQL-336791?style=for-the-badge" alt="Database">
+  <img src="https://img.shields.io/badge/ИИ-LLM_Multi--Provider-orange?style=for-the-badge" alt="AI">
 </p>
-
-> **📢 Now Available on Web!**  
-> We've made OpenHealth more accessible with two tailored options:  
-> **[Clinic](https://qna.open-health.me/)** - Quick and easy health consultations  
-> **[Full Platform](https://www.open-health.me/)** - Advanced tools for comprehensive health management
-
-### 🌍 Choose Your Language
-[English](README.md) | [Français](i18n/readme/README.fr.md) | [Deutsch](i18n/readme/README.de.md) | [Español](i18n/readme/README.es.md) | [한국어](i18n/readme/README.ko.md) | [中文](i18n/readme/README.zh.md) | [日本語](i18n/readme/README.ja.md) | [Українська](i18n/readme/README.uk.md) | [Русский](i18n/readme/README.ru.md) | [اردو](i18n/readme/README.ur.md)
 
 </div>
 
 ---
 
-<p align="center">
-  <img src="/intro/openhealth.avif" alt="OpenHealth Demo">
-</p>
+## Что это такое
 
-## 🌟 Overview
+Health Assistant -- это веб-платформа, которая собирает медицинские данные пользователя в одном месте и даёт возможность общаться с ИИ-ассистентом, который эти данные понимает.
 
-> OpenHealth helps you **take charge of your health data**. By leveraging AI and your personal health information,
-> OpenHealth provides a private assistant that helps you better understand and manage your health. You can run it completely locally for maximum privacy.
+Простыми словами: пользователь загружает свои анализы, результаты обследований, описывает симптомы -- а система структурирует всё это и позволяет задавать вопросы умному ассистенту, который видит полную картину.
 
-## ✨ Project Features
+**Продукт не ставит диагнозы и не назначает лечение** -- он помогает пользователю осознанно управлять своим здоровьем и приходить к врачу подготовленным.
 
-<details open>
-<summary><b>Core Features</b></summary>
+---
 
-- 📊 **Centralized Health Data Input:** Easily consolidate all your health data in one place.
-- 🛠️ **Smart Parsing:** Automatically parses your health data and generates structured data files.
-- 🤝 **Contextual Conversations:** Use the structured data as context for personalized interactions with GPT-powered AI.
+## Для кого этот продукт
 
-</details>
+- Люди, которые хотят держать свои медицинские данные в порядке
+- Те, кто следит за динамикой показателей (анализы, вес, давление, сон)
+- Пользователи, которым нужен удобный способ задать вопрос по своим данным без похода к врачу за каждой мелочью
+- Компании, которые хотят дать сотрудникам инструмент заботы о здоровье
 
-## 📥 Supporting Data Sources & Language Models
+---
 
-<table>
-  <tr>
-    <th>Data Sources You Can Add</th>
-    <th>Supported Language Models</th>
-  </tr>
-  <tr>
-    <td>
-      • Blood Test Results<br>
-      • Health Checkup Data<br>
-      • Personal Physical Information<br>
-      • Family History<br>
-      • Symptoms
-    </td>
-    <td>
-      • LLaMA<br>
-      • DeepSeek-V3<br>
-      • GPT<br>
-      • Claude<br>
-      • Gemini
-    </td>
-  </tr>
-</table>
+## Как это работает
 
-## 🤔 Why We Built OpenHealth
+```
+Пользователь                  Система                         ИИ
+    │                            │                              │
+    ├── Загружает анализы ──────►│                              │
+    │   (PDF, фото, ручной ввод) │                              │
+    │                            ├── Парсинг и структуризация   │
+    │                            │   данных                     │
+    │                            ├── Формирование паспорта ─────┤
+    │                            │   здоровья                   │
+    ├── Задаёт вопрос ──────────►├── Контекст + вопрос ────────►│
+    │                            │                              ├── Анализ
+    │◄── Получает ответ ─────────┤◄── Ответ с учётом всех ──────┤
+    │    с учётом СВОИХ данных   │    данных пользователя       │
+```
 
-> - 💡 **Your health is your responsibility.**
-> - ✅ True health management combines **your data** + **intelligence**, turning insights into actionable plans.
-> - 🧠 AI acts as an unbiased tool to guide and support you in managing your long-term health effectively.
+---
 
-## 🗺️ Project Diagram
+## Ключевые возможности
+
+### Паспорт здоровья
+- Загрузка анализов и обследований (PDF, изображения)
+- Автоматический парсинг через Vision AI + OCR
+- Ручной ввод показателей и симптомов
+- Хранение персональных данных (рост, вес, группа крови, пол, возраст)
+- История всех загруженных данных
+
+### ИИ-ассистент
+- Диалог с учётом всех медицинских данных пользователя
+- Поддержка нескольких LLM-провайдеров (Groq, OpenAI, Anthropic, Google, Ollama)
+- Настраиваемые режимы ассистента с кастомными системными промптами
+- Стриминг ответов в реальном времени
+- Рендеринг Markdown, LaTeX-формул, таблиц
+
+### Мультиязычность
+- Русский язык по умолчанию
+- Поддержка 10 языков интерфейса
+
+### Безопасность
+- Шифрование API-ключей (AES-256-CBC)
+- Аутентификация пользователей
+- Все данные хранятся локально, ничего не уходит на сторонние серверы
+- Возможность полностью локального запуска (Ollama + Docling)
+
+---
+
+## Технологический стек
+
+| Слой | Технологии |
+|------|-----------|
+| **Frontend** | Next.js 15, React 19, TypeScript, Tailwind CSS, Framer Motion |
+| **Backend** | Next.js API Routes, Prisma ORM |
+| **База данных** | PostgreSQL |
+| **ИИ** | LangChain, OpenAI SDK, Anthropic SDK, Google GenAI |
+| **Парсинг документов** | PDF.js, Vision AI (OpenAI, Google, Ollama), Docling, Upstage |
+| **Аутентификация** | NextAuth.js |
+| **Деплой** | Docker Compose |
+
+---
+
+## Архитектура
 
 ```mermaid
 graph LR
-    subgraph Health Data Sources
-        A1[Clinical Records<br>Blood Tests/Diagnoses/<br>Prescriptions/Imaging]
-        A2[Health Platforms<br>Apple Health/Google Fit]
-        A3[Wearable Devices<br>Oura/Whoop/Garmin]
-        A4[Personal Records<br>Diet/Symptoms/<br>Family History]
+    subgraph Источники данных
+        A1[Анализы и обследования<br>PDF / фото]
+        A2[Ручной ввод<br>Симптомы / показатели]
+        A3[Персональные данные<br>Анкета пользователя]
     end
 
-    subgraph Data Processing
-        B1[Data Parser & Standardization]
-        B2[Unified Health Data Format]
+    subgraph Обработка данных
+        B1[Vision AI + OCR<br>Парсинг документов]
+        B2[Структурированный<br>паспорт здоровья]
     end
 
-    subgraph AI Integration
-        C1[LLM Processing<br>Commercial & Local Models]
-        C2[Interaction Methods<br>RAG/Cache/Agents]
+    subgraph ИИ-ассистент
+        C1[LLM<br>Groq / OpenAI / Claude /<br>Gemini / Ollama]
+        C2[Контекстный диалог<br>с учётом всех данных]
     end
 
-    A1 & A2 & A3 & A4 --> B1
+    A1 & A2 & A3 --> B1
     B1 --> B2
     B2 --> C1
     C1 --> C2
 
     style A1 fill:#e6b3cc,stroke:#cc6699,stroke-width:2px,color:#000
     style A2 fill:#b3d9ff,stroke:#3399ff,stroke-width:2px,color:#000
-    style A3 fill:#c2d6d6,stroke:#669999,stroke-width:2px,color:#000
-    style A4 fill:#d9c3e6,stroke:#9966cc,stroke-width:2px,color:#000
-    
+    style A3 fill:#d9c3e6,stroke:#9966cc,stroke-width:2px,color:#000
     style B1 fill:#c6ecd9,stroke:#66b399,stroke-width:2px,color:#000
     style B2 fill:#c6ecd9,stroke:#66b399,stroke-width:2px,color:#000
-    
     style C1 fill:#ffe6cc,stroke:#ff9933,stroke-width:2px,color:#000
     style C2 fill:#ffe6cc,stroke:#ff9933,stroke-width:2px,color:#000
-
-    classDef default color:#000
 ```
 
-> **Note:** The data parsing functionality is currently implemented in a separate Python server and is planned to be migrated to TypeScript in the future.
+---
 
-## Getting Started
+## Как это ложится на продуктовую стратегию Health Buddy
 
-## ⚙️ How to Run OpenHealth
+Текущая реализация Health Assistant -- это **работающее ядро** будущего продукта. Вот что уже готово и что масштабируется:
 
-<details open>
-<summary><b>Installation Instructions</b></summary>
+| Блок из ТЗ | Статус | Что реализовано |
+|------------|--------|----------------|
+| **Паспорт здоровья** | Готово | Загрузка, парсинг, структуризация, хранение |
+| **Анкетные данные** | Готово | Пол, возраст, рост, вес, группа крови, этническая принадлежность |
+| **Лабораторные показатели** | Готово | Автопарсинг анализов крови с 200+ показателями |
+| **История состояний** | Готово | Симптомы с датами, файлы с метаданными |
+| **ИИ-аналитика** | Готово | Контекстный диалог по всем данным пользователя |
+| **Биологический возраст** | Архитектурно заложено | Данные для расчёта собираются, нужен алгоритм |
+| **Health Timeline** | Архитектурно заложено | Структура событий есть, нужен UI ленты |
+| **Цель и стратегия** | Следующий этап | Модель данных расширяема |
+| **Wearables** | Следующий этап | Архитектура провайдеров готова к интеграции |
+| **Напоминания** | Следующий этап | Cron/webhook инфраструктура |
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/OpenHealthForAll/open-health.git
-   cd open-health
-   ```
+### Что это значит для проекта
 
-2. **Setup and Run:**
-   ```bash
-   # Copy environment file
-   cp .env.example .env
+Мы не начинаем с нуля. У нас есть:
+- Рабочий парсинг медицинских документов
+- Мультипровайдерная ИИ-архитектура
+- Система хранения и структуризации данных
+- Аутентификация и шифрование
+- Готовый UI с мультиязычностью
 
-   # Start the application using Docker/Podman Compose
-   docker/podman compose --env-file .env up
-   ```
-
-   For existing users, use:
-   ```bash
-   # Generate ENCRYPTION_KEY for .env file:
-   # Run the command below and add the output to ENCRYPTION_KEY in .env
-   echo $(head -c 32 /dev/urandom | base64)
-
-   # Rebuild and start the application
-   docker/podman compose --env-file .env up --build
-   ```
-   to rebuild the image. Run this also if you make any modifications to the .env file.
-
-3. **Access OpenHealth:**
-   Open your browser and navigate to `http://localhost:3000` to begin using OpenHealth.
-
-> **Note:** The system consists of two main components: parsing and LLM. For parsing, you can use docling for full local execution, while the LLM component can run fully locally using Ollama.
-
-> **Note:** If you're using Ollama with Docker, make sure to set the Ollama API endpoint to: `http://docker.for.mac.localhost:11434` on a Mac or `http://host.docker.internal:11434` on Windows.
-
-</details>
+Всё это -- **фундамент**, на который ложатся биологический возраст, таймлайн, цели, стратегии и интеграция с носимыми устройствами без переписывания кода.
 
 ---
 
-## Star History
+## Быстрый старт
 
-[![Star History Chart](https://api.star-history.com/svg?repos=OpenHealthForAll/open-health&type=Date)](https://star-history.com/#OpenHealthForAll/open-health&Date)
+### Требования
+- Docker и Docker Compose
+- Node.js 18+ (для локальной разработки)
+
+### Установка и запуск
+
+```bash
+# Клонировать репозиторий
+git clone https://github.com/guard22/health-assistant.git
+cd health-assistant
+
+# Скопировать конфигурацию
+cp .env.example .env
+
+# Запустить через Docker
+docker compose --env-file .env up
+```
+
+Открыть в браузере: **http://localhost:3000**
+
+### Локальная разработка
+
+```bash
+# Установить зависимости
+npm install
+
+# Запустить базу данных
+docker compose up -d database
+
+# Применить схему БД
+npx prisma db push
+
+# Запустить dev-сервер
+npm run dev
+```
 
 ---
 
-## 🌐 Community and Support
+## Поддерживаемые LLM-провайдеры
+
+| Провайдер | Модели | Примечание |
+|-----------|--------|-----------|
+| **Groq** | openai/gpt-oss-120b, llama и др. | Быстрый инференс, OpenAI-совместимый API |
+| **OpenAI** | GPT-4o, o3-mini и др. | Полная поддержка |
+| **Anthropic** | Claude 3.5, 3.7 | Полная поддержка |
+| **Google** | Gemini 2.0 Flash и др. | Полная поддержка |
+| **Ollama** | Любые локальные модели | Полностью локальный запуск |
+
+---
+
+## Структура проекта
+
+```
+health-assistant/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── api/                # API-эндпоинты
+│   │   ├── chat/               # Экран чата
+│   │   ├── login/              # Авторизация
+│   │   ├── onboarding/         # Онбординг
+│   │   └── source/             # Управление данными
+│   ├── components/             # UI-компоненты
+│   ├── lib/                    # Утилиты, парсеры, шифрование
+│   └── i18n/                   # Интернационализация
+├── prisma/                     # Схема БД и seed-данные
+├── messages/                   # Файлы переводов (10 языков)
+└── docker-compose.yaml         # Конфигурация Docker
+```
+
+---
+
+## Лицензия
+
+MIT
+
+---
 
 <div align="center">
 
-### 💫 Share Your Story & Get Updated & Give Feedback
-[![AIDoctor Subreddit](https://img.shields.io/badge/r/AIDoctor-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/AIDoctor/)
-[![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/B9K654g4wf)
-
-### 🤝 Talk with Team
-[![Calendly](https://img.shields.io/badge/Schedule_Meeting-00A2FF?style=for-the-badge&logo=calendar&logoColor=white)](https://calendly.com/open-health/30min)
-[![Email](https://img.shields.io/badge/Send_Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sj@open-health.me)
+**Разработано командой Tehniki**
 
 </div>
-
